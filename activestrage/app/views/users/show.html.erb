@@ -1,0 +1,10 @@
+<% if @user.avatar.attacheed? %>
+	<p>
+	<strong></strong>
+	#<%= image_tag url_for(@user.avatar) %>
+	<%= image_tag url_for(@user.avatar.variant(resize: '128*128') ) %>
+	</p>
+<% end %>
+
+
+
