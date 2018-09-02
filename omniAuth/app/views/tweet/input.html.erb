@@ -1,0 +1,9 @@
+<h1>Twitter Sample Application</h1>
+<p>Enter a msg:</p>
+<%= form_tag({:action => "update"}, {:method => "post"}) do %>
+  <%= text_field_tag(:message) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+
+
+
