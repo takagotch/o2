@@ -1,0 +1,20 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to 'LOGIN TWITTER', '/auth/twitter' %></li>
+  </ul>
+</div>
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">	
+      <div class="alert alert-success">
+        <%= flash[:notice] >
+      </div>
+    </div>
+  <%= end %>
+  <%= yield %>
+
+</div>
+
+
+
+
