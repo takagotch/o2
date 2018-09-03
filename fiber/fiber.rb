@@ -1,14 +1,8 @@
-fib = Fiber.new do
-  a, b = 1, 1
-  while true
-    Fiber.yeild(a)
-    a, b = b, a + b
-  end
-
+g = Fiber.new do |x|
+  loop { Fiber.yeild(x); x += 1}
 end
 
-10.times do |n|
-  p [n, fib.resume]
-end
+5.times { puts g.resume(0) }
+
 
 
