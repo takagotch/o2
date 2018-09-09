@@ -1,0 +1,11 @@
+midsummer:
+        events: bums
+        start_time: "2018-09-09 19:00"
+        end_time: "2018-09-09 21:00"
+
+next_day:
+        event: bums
+        start_time: "2018-09-09 19:00"
+        end_time: "2018-09-09 21:00"
+
+

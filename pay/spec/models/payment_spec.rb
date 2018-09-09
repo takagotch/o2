@@ -49,20 +49,33 @@ RSpec.describe Payment, type: :model do
     end
 
     describe "maximum_available_refund" do
-      let() {}
-      let() {}
-      let() {}
-      let() {}
-      let() {}
-      let!() {}
+      let(:user) { create(:user) }
+      let(:ticket_1) { create(:ticket) }
+      let(:ticket_2) { create(:ticket) }
+      let(:payment) { Payment.create(
+        user_id: user.id, price_cents: 3000,
+        reference: Payment.generate_reference, payment_method: "stripe") }
+      let!(:payment_line_item_1) { PaymentLineItem.create(
+        payment_id: payment.id, buyable: ticket_1,
+        price_cents: 1500, refund_status: "no_refund") }
+      let!(:payment_line_item_2) { PaymentLineItem.create(
+        payment_id: payment.id, buyable: ticket_2,
+        price_cents: 1500, refund_status: "no_refund")}
 
-      it "" do
+      it "calculates the maximum available refund when there are no refunds" do
+        expect(payment.maximum_available_refund).to eq(Money.new(3000))
+	expect(payment.can_refund?(Money.new(1500))).to be_truthy
       end
 
-      it "" do
+      it "calculates when there is a refund" do
+        payment.generate_refund_payment(amount_cents: 3000, admin: user)
+	expect(payment.maximum_available_refund).to eq(Money.new(0))
       end
 
-      it "" do
+      it "calculates when there is a partial refund" do
+        payment_line_item_1.generate_refund_payment(
+	  amount_cents: 1500, admin: user)
+	expect(payment.maximum_available_refund).to eq(Money.new(1500))
       end
 
     end
