@@ -1,0 +1,13 @@
+CreatesPlan
+CreatesStripeRefund/happy_path_end-to-end_ish_test
+CreatesSubscriptionViaStripe/happy_path
+ExecutesStripePurchase
+PreparesCartForPayPal/successful_credit_card_purcahse
+PrepareCartForStripe
+StripeCahrge
+StripeToken
+purchasing_a_cart
+purchasing_a_subscription_plan
+
+
+
