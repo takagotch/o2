@@ -1,0 +1,27 @@
+en:
+        simple_form:
+                "yes": 'Yes'
+                "no": 'No'
+                required:
+                        text: 'required'
+                        mark: '*'
+                error_notification:
+                        default_message: "Please review the problem below:"
+                        # labels:
+                        #   defaults:
+                        #     password: ''
+                        #   user:
+                        #     new:
+                        #       email: ''
+                        # hints:
+                        #   defaults:
+                        #     username: ''
+                        #     password: ''
+                        #  include_blanks:
+                        #    defaults:
+                        #      age: ''
+                        #  prompts:
+                        #    defaults:
+                        #      age: ''
+
+

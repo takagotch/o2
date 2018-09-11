@@ -1,0 +1,23 @@
+test: &default
+
+  client_id: EBWKJJJJJJJJJJJJJJJJJJJJJ
+  client_secret: E04222JJJJJJJJJJJJJJJJJJ
+
+  mode: sandbox
+
+  app_id: APP-80W222222222
+  username: jb-us-seller_api1.paypal.com
+  password: Wx4WTTTTTTTTTTT
+  signature: AFcWxVVVVVVVVVVVVV
+
+  sandbox_email_address: Platform.sdk.seller@gmail.com
+
+development:
+        mode: sandbox
+        client_id: <%= ENV["PAYPAL_CLIENT_ID"] %>
+        client_secret: <%= ENV["PAYPAL_CLIENT_SECRET"] %>
+
+production:
+        <<: *default
+        mode: live
+
