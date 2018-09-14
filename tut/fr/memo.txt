@@ -1,0 +1,9 @@
+Micropost.create
+Micorpost.create!
+Micorpost.new
+
+user.microposts.create
+user.microposts.create!
+user.microposts.build
+
+
